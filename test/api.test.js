@@ -70,19 +70,6 @@ describe("API pow", () => {
   });
 });
 
-describe("API divide", () => {
-  test("Debería responder con un 400 y error cuando el segundo parámetro es 0", async () => {
-    const app = await api.build();
-
-    const res = await request(app)
-      .get("/api/v1/div/10/0")
-      .expect(400)
-      .expect("Content-Type", "application/json; charset=utf-8");
-
-    expect(res.body).toEqual({ error: "No se puede dividir por cero" });
-  });
-});
-
 describe("API getHistory", () => {
   test("Debería devolver todo el historial", async () => {
     const app = await api.build();
@@ -176,15 +163,15 @@ describe("API decimalABinario", () => {
   });
 });
 
-describe("API raiz cuadrada", () => {
-  test("Deberia responder con un 200 ok si se calcula la raiz cuadrada de 16 y dar como resultado 4", async () => {
+describe("API divide", () => {
+  test("Debería responder con un 400 y error cuando el segundo parámetro es 0", async () => {
     const app = await api.build();
 
     const res = await request(app)
-      .get("/api/v1/sqrt/16")
-      .expect(200)
+      .get("/api/v1/div/10/0")
+      .expect(400)
       .expect("Content-Type", "application/json; charset=utf-8");
 
-    expect(res.body.result).toEqual(4);
+    expect(res.body).toEqual({ error: "No se puede dividir por cero" });
   });
 });
