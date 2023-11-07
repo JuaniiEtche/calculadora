@@ -1,4 +1,4 @@
-# ReCalc v1.4.0
+# ReCalc v1.5.0
 
 Calculadora con funciones simples.
 
@@ -20,6 +20,7 @@ npm run test
 ```
 
 # Integrantes
+
 - Cintia Valero
 - Matias Omar Batista
 - Juan Ignacio Etcheverry
